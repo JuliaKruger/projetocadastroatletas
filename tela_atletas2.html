@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<HTML lang="en">
+   <HEAD>
+      <META charset="UTF-8">
+      <META name="viewport" content="width=device-width, initial-scale=1.0">
+      <TITLE>Consulta de Resultados</TITLE>
+   </HEAD>
+   <BODY>
+      <LEGEND>Consultar Resultados</LEGEND>
+      <FORM id="id-form-atleta" method="POST" action="/cgi-bin/P11ATLETA.exe">
+
+         <FIELDSET>
+            <LABEL for="id-atletaId">ID do atleta:</LABEL><BR>
+            <INPUT type="text" id="id-atletaId" name="f-id-atleta" value="%%f-id-atleta%%" maxlength="3"><BR><BR>
+    
+            <LABEL for="id-nome">Nome do Atleta:</LABEL><BR>
+            <INPUT type="text" id="id-nome" name="f-nome" value="%%f-nome%%" maxlength="50"><BR><BR>
+    
+            <LABEL for="id-peso">Peso do Atleta:</LABEL><BR>
+            <INPUT type="text" id="id-peso" name="f-peso" value="%%f-peso%%" maxlength="6"><BR><BR>
+    
+            <LABEL for="id-altura">Altura do Atleta:</LABEL><BR>
+            <INPUT type="text" id="id-altura" name="f-altura" value="%%f-altura%%" maxlength="6"><BR><BR>
+
+            <LABEL for="id-imc">IMC do Atleta:</LABEL><BR>
+            <INPUT type="text" id="id-imc" name="f-imc" value="%%f-imc%%" maxlength="5"><BR><BR>
+    
+            <LABEL for="id-data">Peso Ideal do Atleta:</LABEL><BR>
+            <INPUT type="text" id="id-peso-ideal" name="f-peso-ideal" value="%%f-peso-ideal%%" maxlength="6"><BR><BR>
+
+         </FIELDSET>
+
+         <BR>
+         <BUTTON type="submit" id="id-bt-salvar"          name="f-op-salvar"          value="SA">Salvar</BUTTON>
+         <BUTTON type="submit" id="id-bt-buscar-um"       name="f-op-buscar-um"       value="BU">Consultar ID</BUTTON>
+         <BUTTON type="submit" id="id-bt-buscar-proximo"  name="f-op-buscar-proximo"  value="BP">Consultar Proximo</BUTTON>
+         <BUTTON type="submit" id="id-bt-buscar-anterior" name="f-op-buscar-anterior" value="BA">Consultar Anterior</BUTTON>
+         <BUTTON type="submit" id="id-bt-deletar"         name="f-op-deletar"         value="DE">Deletar</BUTTON>
+         <INPUT type="reset"   id="id-bt-reset"                                       value="Cancelar">
+
+         <INPUT type="hidden" id="id-hd-confirma" name="f-hd-confirma" value= "%%f-hd-confirma%%">
+         <INPUT type="hidden" id="id-hd-msn"      name="f-hd-msn"      value= "%%f-hd-msn%%">
+         <INPUT type="hidden" id="id-hd-operacao" name="f-hd-operacao" value= "%%f-hd-operacao%%">
+         <INPUT type="hidden" id="id-hd-msn-erro" name="f-hd-msn-erro" value= "%%f-hd-msn-erro%%">                    
+      </FORM>
+
+      <SCRIPT>
+          var hdMsn = document.querySelector("#id-hd-msn");
+          var hdConfirma = document.querySelector("#id-hd-confirma");
+          var hdMsnErro = document.querySelector("#id-hd-msn-erro")
+          if( hdConfirma.value == "?     " ){
+              hdConfirma.value = window.confirm(hdMsn.value);
+              document.getElementById("id-form-atleta").submit();
+          }
+
+          if( hdMsnErro.value != "                                                  " ){
+              alert(hdMsnErro.value)
+          }
+      </SCRIPT>
+
+   </BODY>
+</HTML>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<HTML lang="en">
+   <HEAD>
+      <META charset="UTF-8">
+      <META name="viewport" content="width=device-width, initial-scale=1.0">
+      <TITLE>Consulta de Atletas</TITLE>
+   </HEAD>
+   <BODY>
+      <LEGEND>Consultar Atletas</LEGEND>
+      <FORM id="id-form-atleta" method="POST" action="/cgi-bin/P11ATLETA.exe">
+         <BR>
+         <FIELDSET>
+            <LABEL for="id-atletaId">ID do atleta:</LABEL><BR>
+            <INPUT type="text" id="id-atletaId" name="f-id-atleta" maxlength="3"><BR><BR>
+
+            <LABEL for="id-nome">Nome do Atleta:</LABEL><BR>
+            <INPUT type="text" id="id-nome" name="f-nome" maxlength="50"><BR><BR>
+
+            <LABEL for="id-peso">Peso do Atleta:</LABEL><BR>
+            <INPUT type="text" id="id-peso" name="f-peso" maxlength="6"><BR><BR>
+
+            <LABEL for="id-altura">Altura do Atleta:</LABEL><BR>
+            <INPUT type="text" id="id-altura" name="f-altura" maxlength="6"><BR><BR>
+
+            <LABEL for="id-imc">IMC do Atleta:</LABEL><BR>
+            <INPUT type="text" id="id-imc" name="f-imc" maxlength="5"><BR><BR>
+
+            <LABEL for="id-data">Peso Ideal do Atleta:</LABEL><BR>
+            <INPUT type="text" id="id-peso-ideal" name="f-peso-ideal" maxlength="6"><BR><BR>
+         </FIELDSET>
+
+         <BR>
+         <BUTTON type="submit" id="id-bt-salvar" name="f-op-salvar" value="SA">Salvar</button>
+         <BUTTON type="submit" id="id-bt-buscar-um" name="f-op-buscar-um" value="BU">Consultar ID</button>
+         <BUTTON type="submit" id="id-bt-buscar-proximo" name="f-op-buscar-proximo" value="BP">Consultar Proximo</BUTTON>
+         <BUTTON type="submit" id="id-bt-buscar-anterior" name="f-op-buscar-anterior" value="BA">Consultar Anterior</BUTTON>
+         <BUTTON type="submit" id="id-bt-deletar" name="f-op-deletar" value="DE">Deletar</button>
+         <INPUT type="reset" id="id-bt-reset" value="Cancelar">
+      </FORM>
+
+   </BODY>
+</HTML>
